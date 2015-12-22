@@ -18,9 +18,14 @@ This is a pluggable backend for [StatsD](https://github.com/etsy/statsd), which 
   backends: ["statsd-zabbix-backend"],
   zabbixPort: 10051,
   zabbixHost: "localhost",
-  zabbixSender: "/usr/bin/zabbix_sender"
+  zabbixSender: "/usr/bin/zabbix_sender",
+  zabbixSourceHostname: "custom.host.name"
 }
 ```
+
+Setting `zabbixSourceHostname` will disable default behaviour of geting
+host name by splitting passed keys, and will append this value to
+each one.
 
 ## Usage
 
